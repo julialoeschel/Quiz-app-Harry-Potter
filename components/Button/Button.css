@@ -1,0 +1,8 @@
+button {
+  width: 7em;
+  padding: 0.4em 1em;
+  align-self: center;
+  background-color: #ffc500;
+  color: #7f0909;
+  border: #7f0909 solid 2px;
+}

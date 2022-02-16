@@ -1,0 +1,28 @@
+.nav {
+  background-color: #ffc500;
+  color: #7f0909;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+  height: 60px;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.navElement {
+  list-style: none;
+  padding: 0.2em 0.5em;
+  display: inline;
+  height: 100%;
+  width: 24%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}

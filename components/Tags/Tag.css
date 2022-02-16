@@ -1,0 +1,16 @@
+.tag {
+  list-style: none;
+  padding: 0.2em 0.5em;
+  display: inline;
+  border: 2px solid #7f0909;
+  border-radius: 0.8em;
+  margin-top: 0.5em;
+  background-color: wheat;
+}
+
+.tagList {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}

@@ -1,0 +1,8 @@
+@import "./style/base.css";
+@import "./components/Header/Header.css";
+@import "./components/Card/Card.css";
+@import "./components/Button/Button.css";
+@import "./components/Tags/Tag.css";
+@import "./components/Footer/Footer.css";
+@import "./components/Profile/Profile.css";
+@import "./components/Form/Form.css";

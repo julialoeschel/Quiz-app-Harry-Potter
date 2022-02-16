@@ -1,0 +1,11 @@
+h1 {
+  margin: 0;
+  padding: 10px 20px;
+  background-color: #ffc500;
+  color: #7f0909;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
