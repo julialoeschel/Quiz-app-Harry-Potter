@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run prettier:check",
+    "dev": "npx live-server . ",
     "prettier:write": "npx prettier --write .",
     "prettier:check": "npx prettier --check ."
   },
