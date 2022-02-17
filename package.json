@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/julialoeschel/Quiz-app-Harry-Potter#readme",
   "dependencies": {
+    "live-server": "^1.2.1",
     "prettier": "^2.5.1"
   },
   "devDependencies": {
