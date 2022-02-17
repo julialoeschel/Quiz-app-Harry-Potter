@@ -1,8 +1,8 @@
 @import "./style/base.css";
-@import "./components/Header/Header.css";
-@import "./components/Card/Card.css";
-@import "./components/Button/Button.css";
-@import "./components/Tags/Tag.css";
-@import "./components/Footer/Footer.css";
-@import "./components/Profile/Profile.css";
-@import "./components/Form/Form.css";
+@import "./style/components/Header.css";
+@import "./style/components/Card.css";
+@import "./style/components/Button.css";
+@import "./style/components/Tag.css";
+@import "./style/components/Footer.css";
+@import "./style/components/Profile.css";
+@import "./style/components/Form.css";
