@@ -26,18 +26,15 @@ p {
   top: -4px;
 }
 
-.booked {
-  background-color: #b66f13;
-  border-radius: 30%;
-}
-
 .bookmark:hover {
   transform: scale(1.5);
   fill: #ffc500;
+  stroke: #7f0909;
 }
 
 .booked {
   width: 30px;
   height: 30px;
-  fill: #ffc500;
+  fill: #ffc401;
+  stroke: #7f0909;
 }
