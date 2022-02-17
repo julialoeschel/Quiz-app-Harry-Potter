@@ -25,6 +25,7 @@ const bookmarkSection = document.querySelector(
 const profileSection = document.querySelector(
   "[data-js=cards-section-profile]"
 );
+
 const addSection = document.querySelector("[data-js=cards-section-add]");
 const bookmarkNav = document.querySelector("[data-js=nav-bookmark]");
 const homeNav = document.querySelector("[data-js=nav-home]");
@@ -57,4 +58,24 @@ profileNav.addEventListener("click", () => {
   bookmarkSection.classList.add("hidden");
   homeSection.classList.add("hidden");
   profileSection.classList.remove("hidden");
+});
+
+const createAddQuestion = document.querySelector("[data-js=text-addquestion]");
+const amountLeftAddQuestion = document.querySelector(
+  "[data-js=create-amount-add-question]"
+);
+const createAddAnswer = document.querySelector("[data-js=text-addanswer]");
+const amountLeftAddAnswer = document.querySelector(
+  "[data-js=create-amount-add-answer]"
+);
+
+createAddQuestion.addEventListener("input", () => {
+  const questionTextLength = createAddQuestion.value.length;
+  const maxLengthAddQuestion = createAddQuestion.maxLength;
+  amountLeftAddQuestion.innerText = maxLengthAddQuestion - questionTextLength;
+});
+
+createAddAnswer.addEventListener("input", () => {
+  amountLeftAddAnswer.innerText =
+    createAddAnswer.maxLength - createAddAnswer.value.length;
 });
