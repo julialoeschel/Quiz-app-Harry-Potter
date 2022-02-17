@@ -4,6 +4,7 @@ h1 {
   background-color: #ffc500;
   color: #7f0909;
   position: fixed;
+  left: 0;
   top: 0;
   width: 100%;
   text-align: center;
