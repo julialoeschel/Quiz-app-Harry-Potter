@@ -12,9 +12,10 @@
       <h1>Bookmarks</h1>
     </header>
     <main>
-      <section>
+      <div class="card" data-js="card">
         <svg
-          class="bookmark booked"
+          data-js="bookmark"
+          class="bookmark bookmark--booked"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -26,14 +27,21 @@
           />
         </svg>
         <h2>Question</h2>
-        <p>This is a question abou Hogwarts</p>
-        <button>Answer</button>
+        <p>Name Luna Lovegood's father.</p>
+        <button data-js="answerButton">
+          <span class="hidden" data-js="answerSpanHidden">hide</span>
+          Answer
+        </button>
+        <h2 class="hidden" data-js="answerHeading">Answer</h2>
+        <p class="hidden" data-js="answerText">Xenophillius Lovegood</p>
         <ul class="tagList" role="list">
           <li class="tag">Hogwarts</li>
           <li class="tag">spell</li>
           <li class="tag">Gryffindor</li>
+          <li class="tag">Hedwig</li>
+          <li class="tag">Weasly</li>
         </ul>
-      </section>
+      </div>
     </main>
     <footer class="nav">
       <ul class="navList">

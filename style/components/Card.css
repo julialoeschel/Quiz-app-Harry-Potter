@@ -1,4 +1,4 @@
-section {
+.card {
   background-color: #c0c0c0;
   border: 2px solid #7f0909;
   opacity: 0.7;
@@ -32,7 +32,7 @@ p {
   stroke: #7f0909;
 }
 
-.booked {
+.bookmark--booked {
   width: 30px;
   height: 30px;
   fill: #ffc401;

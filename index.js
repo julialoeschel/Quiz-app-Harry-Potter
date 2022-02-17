@@ -1,11 +1,19 @@
-const createAddQuestion = document.querySelector("[data-js=text-addquestion]");
-const toggleBookmark = document.querySelector("[data-js=bookmark]");
+const cardSet = document.querySelectorAll("[data-js=card]");
 
-createAddQuestion.addEventListener("input", () => {
-  const questionTextLength = createAddQuestion.value.length;
-  console.log(questionTextLength);
-});
+cardSet.forEach((card) => {
+  const bookmark = card.querySelector("[data-js=bookmark]");
+  const answerButton = card.querySelector("[data-js=answerButton]");
+  const answerText = card.querySelector("[data-js=answerText]");
+  const answerSpanHidden = card.querySelector("[data-js=answerSpanHidden]");
+  const answerHeading = card.querySelector("[data-js=answerHeading]");
 
-toggleBookmark.addEventListener("click", () => {
-  toggleBookmark.classList.toggel("booked");
+  bookmark.addEventListener("click", () => {
+    bookmark.classList.toggle("bookmark--booked");
+  });
+
+  answerButton.addEventListener("click", () => {
+    answerSpanHidden.classList.toggle("hidden");
+    answerHeading.classList.toggle("hidden");
+    answerText.classList.toggle("hidden");
+  });
 });
