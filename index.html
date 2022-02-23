@@ -11,6 +11,49 @@
   <body>
     <main data-js="cards-section-home">
       <h1>Harry Potter Quiz</h1>
+      <form data-js="filter-form" aria-labeledby="form-heading">
+        <fieldset class="filterbox">
+          <span>Filter by Tags</span>
+          <div>
+            <legend id="form-heading"></legend>
+            <input
+              name="tag-filter"
+              value="harry"
+              class="tag-input"
+              id="tag-harry"
+              type="radio"
+              checked
+            />
+            <label class="tag-label" for="tag-harry">Harry</label>
+            <input
+              name="tag-filter"
+              value="weasly"
+              class="tag-input"
+              id="tag-weasly"
+              type="radio"
+            />
+            <label class="tag-label" for="tag-weasly">Weasly</label>
+            <input
+              name="tag-filter"
+              value="hogwartsExpress"
+              class="tag-input"
+              id="tag-hogwartsExpress"
+              type="radio"
+            />
+            <label class="tag-label" for="tag-hogwartsExpress"
+              >HogwartsExpress</label
+            >
+            <input
+              name="tag-filter"
+              value="magic"
+              class="tag-input"
+              id="tag-magic"
+              type="radio"
+            />
+            <label class="tag-label" for="tag-magic">magic</label>
+          </div>
+        </fieldset>
+      </form>
       <ul role="list" data-js="cards" class="card__container"></ul>
     </main>
 

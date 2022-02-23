@@ -2,7 +2,25 @@ export default function input() {
   const cardsContainer = document.querySelector("[data-js=cards]");
   const form = document.querySelector("[data-js=form]");
 
-  let cards = [];
+  let cards = [
+    {
+      question: "What is the Dursley's address?",
+      answer: "4 Privet Drive",
+      tags: ["Harry", "Dursley", "house"],
+    },
+    {
+      question:
+        "What was the name of the tree Harry and Ron crashed their car into?",
+      answer: "The Whomping Willow",
+      tags: ["flying car", "Weasley", "magic", "drive", "hogwartsExpress"],
+    },
+    {
+      question: "What flavour are Bertie Bott’s beans?",
+      answer: "Every flavour",
+      tags: ["sweet", "hogwartsExpress"],
+    },
+  ];
+  renderCards();
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -21,7 +39,7 @@ export default function input() {
 
     cards = [newCard, ...cards];
     renderCards();
-
+    console.log(cards);
     form.reset();
   });
 
@@ -52,10 +70,28 @@ export default function input() {
      <h2 class="hidden" data-js="answerHeading">Answer</h2>
      <p class="hidden" data-js="answerText">${card.answer}</p>
      <ul class="tagList" role="list">
-     ${card.tags.map((tag) => `<li class="tag">${tag}</li>`).join("")}
+     ${card.tags?.map((tag) => `<li class="tag">${tag}</li>`).join("")}
      </ul>
       `;
       cardsContainer.append(cardItem);
+
+      const answerButton = cardItem.querySelector("[data-js=answerButton]");
+      const answerHeading = cardItem.querySelector("[data-js=answerHeading]");
+      const answerSpanHidden = cardItem.querySelector(
+        "[data-js=answerSpanHidden]"
+      );
+      const answerTextElement = cardItem.querySelector("[data-js=answerText]");
+      const bookmark = cardItem.querySelector("[data-js=bookmark]");
+
+      answerButton.addEventListener("click", () => {
+        answerSpanHidden.classList.toggle("hidden");
+        answerHeading.classList.toggle("hidden");
+        answerTextElement.classList.toggle("hidden");
+      });
+
+      bookmark.addEventListener("click", () => {
+        bookmark.classList.toggle("bookmark--booked");
+      });
     });
   }
 }
