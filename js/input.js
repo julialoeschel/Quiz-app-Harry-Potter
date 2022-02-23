@@ -1,26 +1,33 @@
 export default function input() {
   const cardsContainer = document.querySelector("[data-js=cards]");
   const form = document.querySelector("[data-js=form]");
+  const filterForm = document.querySelector("[data-js=filter-form]");
 
+  let currentFilter = "all";
   let cards = [
     {
       question: "What is the Dursley's address?",
       answer: "4 Privet Drive",
-      tags: ["Harry", "Dursley", "house"],
+      tags: ["Harry"],
     },
     {
       question:
         "What was the name of the tree Harry and Ron crashed their car into?",
       answer: "The Whomping Willow",
-      tags: ["flying car", "Weasley", "magic", "drive", "hogwartsExpress"],
+      tags: ["Weasley", "magic", "hogwartsExpress"],
     },
     {
       question: "What flavour are Bertie Bott’s beans?",
       answer: "Every flavour",
-      tags: ["sweet", "hogwartsExpress"],
+      tags: ["hogwartsExpress"],
     },
   ];
   renderCards();
+
+  filterForm.addEventListener("change", () => {
+    currentFilter = filterForm.elements["tag-filter"].value;
+    renderCards();
+  });
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -46,10 +53,14 @@ export default function input() {
   function renderCards() {
     cardsContainer.innerHTML = "";
 
-    cards.forEach((card) => {
-      const cardItem = document.createElement("li");
-      cardItem.className = "card";
-      cardItem.innerHTML = `  <svg
+    cards
+      .filter(
+        (card) => card.tags.includes(currentFilter) || currentFilter === "all"
+      )
+      .forEach((card) => {
+        const cardItem = document.createElement("li");
+        cardItem.className = "card";
+        cardItem.innerHTML = `  <svg
       data-js="bookmark"
       class="bookmark bookmark--booked"
       xmlns="http://www.w3.org/2000/svg"
@@ -73,25 +84,27 @@ export default function input() {
      ${card.tags?.map((tag) => `<li class="tag">${tag}</li>`).join("")}
      </ul>
       `;
-      cardsContainer.append(cardItem);
+        cardsContainer.append(cardItem);
 
-      const answerButton = cardItem.querySelector("[data-js=answerButton]");
-      const answerHeading = cardItem.querySelector("[data-js=answerHeading]");
-      const answerSpanHidden = cardItem.querySelector(
-        "[data-js=answerSpanHidden]"
-      );
-      const answerTextElement = cardItem.querySelector("[data-js=answerText]");
-      const bookmark = cardItem.querySelector("[data-js=bookmark]");
+        const answerButton = cardItem.querySelector("[data-js=answerButton]");
+        const answerHeading = cardItem.querySelector("[data-js=answerHeading]");
+        const answerSpanHidden = cardItem.querySelector(
+          "[data-js=answerSpanHidden]"
+        );
+        const answerTextElement = cardItem.querySelector(
+          "[data-js=answerText]"
+        );
+        const bookmark = cardItem.querySelector("[data-js=bookmark]");
 
-      answerButton.addEventListener("click", () => {
-        answerSpanHidden.classList.toggle("hidden");
-        answerHeading.classList.toggle("hidden");
-        answerTextElement.classList.toggle("hidden");
+        answerButton.addEventListener("click", () => {
+          answerSpanHidden.classList.toggle("hidden");
+          answerHeading.classList.toggle("hidden");
+          answerTextElement.classList.toggle("hidden");
+        });
+
+        bookmark.addEventListener("click", () => {
+          bookmark.classList.toggle("bookmark--booked");
+        });
       });
-
-      bookmark.addEventListener("click", () => {
-        bookmark.classList.toggle("bookmark--booked");
-      });
-    });
   }
 }
