@@ -1,4 +1,4 @@
-export default function input() {
+export default function renderInput() {
   const cardsContainer = document.querySelector("[data-js=cards]");
   const bookmarksContainer = document.querySelector("[data-js=bookmark]");
   const form = document.querySelector("[data-js=form]");
