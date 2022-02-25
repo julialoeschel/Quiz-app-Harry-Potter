@@ -19,3 +19,10 @@ Author: <Name>
   1. ...
   2. ...
   3. ...
+
+  
+## Decicions
+  [keep track of decicions made, who decided and give some content if necessary]
+  
+  1. 
+  
