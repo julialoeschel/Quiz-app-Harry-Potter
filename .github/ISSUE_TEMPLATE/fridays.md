@@ -7,4 +7,4 @@ Author: <Name>
 ---
 
 ## Agenda nach Prio
-  -[ ] Session planning
+  - [ ] Session planning
