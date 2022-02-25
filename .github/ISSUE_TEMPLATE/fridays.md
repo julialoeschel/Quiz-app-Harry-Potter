@@ -1,7 +1,6 @@
 ---
-name: Meeting Minutes Friday
-Date: 
-Author:
+name: Frieday Meeting
+about: Session planning
 
 ---
 
