@@ -11,3 +11,11 @@ Author: <Name>
 - [ ] Session planning
 - [ ] ...
 - [ ] ...
+
+  
+  ## Themen
+  # ggf. mit outcome
+  
+  - 
+  - 
+  - 
