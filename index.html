@@ -11,153 +11,115 @@
   <body>
     <main data-js="cards-section-home">
       <h1>Harry Potter Quiz</h1>
-      <div class="card" data-js="card">
-        <svg
-          data-js="bookmark"
-          class="bookmark"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="#7f0909"
-        >
-          <path
-            d="M20 24l-6-5.269-6 5.269v-17.411c0-3.547-1.167-5.547-4-6.589h9.938c3.34 0 6.052 2.701 6.062 6.042v17.958z"
-          />
-        </svg>
-        <h2>Question</h2>
-        <p>Name Luna Lovegood's father.</p>
-        <button data-js="answerButton">
-          <span class="hidden" data-js="answerSpanHidden">hide</span>
-          Answer
-        </button>
-        <h2 class="hidden" data-js="answerHeading">Answer</h2>
-        <p class="hidden" data-js="answerText">Xenophillius Lovegood</p>
-        <ul class="tagList" role="list">
-          <li class="tag">Hogwarts</li>
-          <li class="tag">spell</li>
-          <li class="tag">Gryffindor</li>
-          <li class="tag">Hedwig</li>
-          <li class="tag">Weasly</li>
-        </ul>
-      </div>
-      <div class="card" data-js="card">
-        <svg
-          data-js="bookmark"
-          class="bookmark"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="#7f0909"
-        >
-          <path
-            d="M20 24l-6-5.269-6 5.269v-17.411c0-3.547-1.167-5.547-4-6.589h9.938c3.34 0 6.052 2.701 6.062 6.042v17.958z"
-          />
-        </svg>
-        <h2>Question</h2>
-        <p>What is the name of Harry Potter's owl?</p>
-        <button data-js="answerButton">
-          <span class="hidden" data-js="answerSpanHidden">hide</span>
-          Answer
-        </button>
-        <h2 class="hidden" data-js="answerHeading">Answer</h2>
-        <p class="hidden" data-js="answerText">Hedwig</p>
-        <ul class="tagList" role="list">
-          <li class="tag">Hogwarts</li>
-          <li class="tag">spell</li>
-          <li class="tag">Gryffindor</li>
-          <li class="tag">Hedwig</li>
-          <li class="tag">Weasly</li>
-        </ul>
-      </div>
+      <form data-js="filter-form" aria-labeledby="form-heading">
+        <fieldset class="filterbox">
+          <span>Filter by Tags</span>
+          <div>
+            <input
+              name="tag-filter"
+              value="all"
+              class="tag-input"
+              id="tag-all"
+              type="radio"
+            />
+            <label class="tag-label" for="tag-all">all</label>
+            <legend id="form-heading"></legend>
+            <input
+              name="tag-filter"
+              value="Harry"
+              class="tag-input"
+              id="tag-harry"
+              type="radio"
+              checked
+            />
+            <label class="tag-label" for="tag-harry">Harry</label>
+            <input
+              name="tag-filter"
+              value="Weasley"
+              class="tag-input"
+              id="tag-weasley"
+              type="radio"
+            />
+            <label class="tag-label" for="tag-weasley">Weasley</label>
+            <input
+              name="tag-filter"
+              value="hogwartsExpress"
+              class="tag-input"
+              id="tag-hogwartsExpress"
+              type="radio"
+            />
+            <label class="tag-label" for="tag-hogwartsExpress"
+              >HogwartsExpress</label
+            >
+            <input
+              name="tag-filter"
+              value="magic"
+              class="tag-input"
+              id="tag-magic"
+              type="radio"
+            />
+            <label class="tag-label" for="tag-magic">magic</label>
+          </div>
+        </fieldset>
+      </form>
+      <ul role="list" data-js="cards" class="card__container"></ul>
     </main>
 
     <main data-js="cards-section-bookmark" class="hidden">
       <h1>Bookmarks</h1>
-      <div class="card" data-js="card">
-        <svg
-          data-js="bookmark"
-          class="bookmark bookmark--booked"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="#7f0909"
-        >
-          <path
-            d="M20 24l-6-5.269-6 5.269v-17.411c0-3.547-1.167-5.547-4-6.589h9.938c3.34 0 6.052 2.701 6.062 6.042v17.958z"
-          />
-        </svg>
-        <h2>Question</h2>
-        <p>Name Luna Lovegood's father.</p>
-        <button data-js="answerButton">
-          <span class="hidden" data-js="answerSpanHidden">hide</span>
-          Answer
-        </button>
-        <h2 class="hidden" data-js="answerHeading">Answer</h2>
-        <p class="hidden" data-js="answerText">Xenophillius Lovegood</p>
-        <ul class="tagList" role="list">
-          <li class="tag">Hogwarts</li>
-          <li class="tag">spell</li>
-          <li class="tag">Gryffindor</li>
-          <li class="tag">Hedwig</li>
-          <li class="tag">Weasly</li>
-        </ul>
-      </div>
+      <ul role="list" data-js="bookmark" class="card__container"></ul>
     </main>
     <main data-js="cards-section-add" class="hidden">
       <h1 class="headline">Create</h1>
-      <fieldset class="create">
-        <label class="create__headline" for="create-question"
-          >Add question
-          <small class="create__headline--small"
-            >(<span data-js="create-amount-add-question">300 </span> charackters
-            left)</small
-          ></label
-        >
-        <textarea
-          data-js="text-addquestion"
-          name="create-question"
-          id="create-question-1"
-          cols="40"
-          rows="8"
-          maxlength="300"
-          placeholder="Add your question here..."
-        ></textarea>
-        <label class="create__headline mt-15" for="create-answer"
-          >Add answer
-          <small class="create__headline--small"
-            >(<span data-js="create-amount-add-answer">500 </span> charackters
-            left)</small
-          ></label
-        >
-        <textarea
-          data-js="text-addanswer"
-          name="create-answer"
-          id="create-answer"
-          cols="40"
-          rows="10"
-          maxlength="500"
-          placeholder="Add your answer here..."
-        ></textarea>
-        <label class="create__headline mt-15" for="create-label"
-          >Add tags
-          <small class="create__headline--small">(divided by comma)</small>
-        </label>
-        <textarea
-          name="create-label"
-          id="create-label"
-          cols="40"
-          rows="3"
-        ></textarea>
+      <form data-js="form" autocomplete="off">
+        <fieldset class="create">
+          <label class="create__headline" for="question-input"
+            >Add question
+            <small class="create__headline--small"
+              >(<span data-js="create-amount-add-question">300 </span>
+              charackters left)</small
+            ></label
+          >
+          <textarea
+            required
+            data-js="text-addquestion"
+            name="question"
+            id="question-input"
+            cols="40"
+            rows="8"
+            maxlength="300"
+            placeholder="Add your question here..."
+          ></textarea>
+          <label class="create__headline mt-15" for="answer-input"
+            >Add answer
+            <small class="create__headline--small"
+              >(<span data-js="create-amount-add-answer">500 </span> charackters
+              left)</small
+            ></label
+          >
+          <textarea
+            data-js="text-addanswer"
+            required
+            name="answer"
+            id="answer-input"
+            cols="40"
+            rows="10"
+            maxlength="500"
+            placeholder="Add your answer here..."
+          ></textarea>
+          <label class="create__headline mt-15" for="tags-input"
+            >Add tags
+            <small class="create__headline--small">(divided by comma)</small>
+          </label>
+          <textarea name="tags" id="tags-input" cols="40" rows="3"></textarea>
 
-        <input
-          type="submit"
-          class="create__button mt-15"
-          value="submit your answer"
-        />
-      </fieldset>
+          <input
+            type="submit"
+            class="create__button mt-15"
+            value="submit your answer"
+          />
+        </fieldset>
+      </form>
     </main>
 
     <main data-js="cards-section-profile" class="hidden">

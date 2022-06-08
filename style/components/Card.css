@@ -10,6 +10,10 @@
   position: relative;
 }
 
+.card__container {
+  display: grid;
+  gap: 20px;
+}
 section h2 {
   padding: 0;
   margin: 0;
@@ -37,4 +41,10 @@ p {
   height: 30px;
   fill: #ffc401;
   stroke: #7f0909;
+}
+
+.filterbox {
+  background-color: #c0c0c0;
+  border: 2px solid #7f0909;
+  opacity: 0.7;
 }
